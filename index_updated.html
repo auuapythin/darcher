@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="w_mVa2XXZYF_FDvsr-e1JonqeKXA5sTVtp8Rcxloy88" />
+  <title>D-ARCH Modular Kitchen & Interior - Seoni, Madhya Pradesh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #FF5722;
+      --black: #222;
+      --white: #fff;
+      --light-gray: #f8f8f8;
+    }
+    
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+    
+    /* Header Styles */
+    header {
+      width: 100%;
+      background: var(--white);
+      border-bottom: 2px solid #f3f3f3;
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between;
+      padding: 18px 5vw;
+      position: sticky; 
+      top: 0; 
+      z-index: 99;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .logo {
+      font-weight: 700; 
+      font-size: 1.8rem;
+      color: var(--orange);
+      letter-spacing: 0.02em;
+    }
+    
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    
+    nav a {
+      text-decoration: none; 
+      color: var(--black);
+      margin-left: 2rem; 
+      font-weight: 500;
+      font-size: 1.1rem; 
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    
+    nav a.active, 
+    nav a:hover { 
+      color: var(--orange);
+    }
+    
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--orange);
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    
+    .mobile-menu span {
+      width: 25px;
+      height: 3px;
+      background: var(--black);
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 60vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('20250718_155325-COLLAGE.jpg') no-repeat center/cover;
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: flex-start;
+      padding: 6vw 5vw;
+      color: var(--white);
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+    
+    .hero h1 { 
+      font-size: 3rem; 
+      font-weight: 700; 
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .hero p {
+      font-size: 1.3rem; 
+      margin: 0 0 30px 0; 
+      font-weight: 400;
+      max-width: 600px;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+    
+    .cta-btn {
+      background: var(--orange); 
+      color: var(--white); 
+      padding: 15px 40px;
+      border-radius: 50px; 
+      border: none; 
+      font-size: 1.2rem;
+      font-weight: 600; 
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(255,87,34,0.3);
+      text-decoration: none;
+      display: inline-block;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+    
+    .cta-btn:hover {
+      background: #e64a19;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255,87,34,0.4);
+    }
+    
+    /* About Section */
+    .about-section {
+      padding: 80px 5vw;
+      background: var(--light-gray);
+    }
+    
+    .about-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .about-text h2 {
+      font-size: 2.5rem;
+      color: var(--orange);
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+    
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    
+    .about-image {
+      text-align: center;
+    }
+    
+    .about-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    /* Services Preview */
+    .services-preview {
+      padding: 80px 5vw;
+      background: var(--white);
+      text-align: center;
+    }
+    
+    .services-preview h2 {
+      font-size: 2.5rem;
+      color: var(--orange);
+      margin-bottom: 50px;
+      font-weight: 700;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .service-card {
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .service-card h3 {
+      color: var(--orange);
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    .service-card p {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    /* Gallery Preview */
+    .gallery-preview {
+      padding: 80px 5vw;
+      background: var(--light-gray);
+      text-align: center;
+    }
+    
+    .gallery-preview h2 {
+      font-size: 2.5rem;
+      color: var(--orange);
+      margin-bottom: 50px;
+      font-weight: 700;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* WhatsApp Floating Button */
+    .whatsapp-btn {
+      position: fixed; 
+      bottom: 25px; 
+      right: 25px; 
+      background: #25D366; 
+      color: var(--white);
+      border-radius: 50%; 
+      width: 60px; 
+      height: 60px; 
+      font-size: 2rem;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3); 
+      display: flex; 
+      align-items: center;
+      justify-content: center; 
+      text-decoration: none; 
+      z-index: 1000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 40px 5vw 20px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-links {
+      margin-bottom: 30px;
+    }
+    
+    .footer-links a {
+      color: var(--orange);
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--white);
+    }
+    
+    .footer-info {
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      
+      .mobile-menu {
+        display: flex;
+      }
+      
+      .hero {
+        padding: 10vw 5vw;
+        text-align: center;
+      }
+      
+      .hero h1 { 
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .services-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .logo { 
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">D‑ARCH</div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Client Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>We Design Spaces That Feel Like Home.</h1>
+    <p>Your trusted partner in Seoni for stunning modular kitchens & interior transformations that blend style with functionality.</p>
+    <a href="contact.html" class="cta-btn">Start Your Project</a>
+  </section>
+
+  <section class="about-section">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About D‑ARCH</h2>
+        <p>Founded in Seoni, Madhya Pradesh, D‑ARCH Modular Kitchen & Interior has been transforming homes with innovative design solutions and exceptional craftsmanship.</p>
+        <p>We specialize in creating personalized spaces that reflect your lifestyle while maximizing functionality and aesthetic appeal.</p>
+        <p>From modular kitchens to complete interior solutions, we bring your vision to life with quality materials and expert installation.</p>
+      </div>
+      <div class="about-image">
+        <img src="Picsart_25-06-24_18-43-38-543.jpg" alt="Kitchen Transformation Before After">
+      </div>
+    </div>
+  </section>
+
+  <section class="services-preview">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Modular Kitchen Design</h3>
+        <p>L-Shape, U-Shape, Island, and Parallel kitchen designs tailored to your space and cooking needs.</p>
+      </div>
+      <div class="service-card">
+        <h3>Custom Furniture</h3>
+        <p>Wardrobes, TV units, and storage solutions designed to maximize space and functionality.</p>
+      </div>
+      <div class="service-card">
+        <h3>Interior Solutions</h3>
+        <p>False ceilings, lighting, PVC paneling, and complete interior transformations.</p>
+      </div>
+      <div class="service-card">
+        <h3>Design & Planning</h3>
+        <p>2D/3D floor plans, interior walkthroughs, and AutoCAD training for students.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-preview">
+    <h2>Our Work</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="20250718_155325-COLLAGE.jpg" alt="Kitchen Design Collage">
+      </div>
+      <div class="gallery-item">
+        <img src="Picsart_25-06-24_18-43-38-543.jpg" alt="Before After Kitchen Transformation">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="https://www.facebook.com/darchmodular" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/darchmodular" target="_blank">Instagram</a>
+        <a href="https://wa.me/917509057442" target="_blank">WhatsApp</a>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2025 D‑ARCH Modular Kitchen & Interior. All rights reserved.</p>
+        <p>Seoni, Madhya Pradesh | Email: darchmodular@gmail.com | Phone: +91 7509057442</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/917509057442?text=Hi! I'm interested in your modular kitchen and interior services." class="whatsapp-btn" title="Chat on WhatsApp">
+    💬
+  </a>
+
+  <!-- Monku the Desi Bandar Chatbot -->
+  <script>
+    // Simple chatbot functionality
+    const monkuMessages = [
+      "Namaste! Main Monku hun, aapka design buddy! 🐒",
+      "Apka ghar, apke sapne, humare saath! Koi sawal?",
+      "Kitchen design chahiye? Main madad kar sakta hun!",
+      "WhatsApp pe message kariye - turant response milega!"
+    ];
+    
+    let messageIndex = 0;
+    
+    function showMonkuMessage() {
+      if (Math.random() > 0.7) { // 30% chance to show message
+        const message = monkuMessages[messageIndex];
+        alert("🐒 Monku kehta hai: " + message);
+        messageIndex = (messageIndex + 1) % monkuMessages.length;
+      }
+    }
+    
+    // Show Monku message after 10 seconds, then randomly
+    setTimeout(showMonkuMessage, 10000);
+    setInterval(() => {
+      if (Math.random() > 0.95) showMonkuMessage(); // Random appearance
+    }, 30000);
+  </script>
+</body>
+</html>
